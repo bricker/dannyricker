@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   #----------------------
   
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
     flash[:notice] = "Added post" if @post.save
     respond_with @post
   end
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   #----------------------
 
   def update
-    flash[:notice] = "Updated post" if @post.update_attributes(params[:post])
+    flash[:notice] = "Updated post" if @post.update_attributes(post_params)
     respond_with @post
   end
 
@@ -44,5 +44,11 @@ class PostsController < ApplicationController
 
   def get_post
     @post = Post.find(params[:id].to_i)
+  end
+
+  #----------------------
+
+  def post_params
+    params.require(:post).permit(:title, :body)
   end
 end

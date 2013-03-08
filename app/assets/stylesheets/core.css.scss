@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0 0 10px 0;
+    font-family: arial, sans-serif;
+    color: #000;
+    background: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: #005500;
+    text-decoration: none;
+
+    &:hover {
+        color: #009900;
+        text-decoration: none;
+    }
+}
+
+p {
+    margin: 0 0 25px 0;
+    padding: 0;
+    font-family: georgia, serif;
+    font-weight: normal;
+    font-size: 1.2em;
+    color: #000;
+    line-height: 1.2em;
+}
+
+blockquote {
+    padding: 10px;
+    color: #333;
+    border-left: 1px solid #aaa;
+}

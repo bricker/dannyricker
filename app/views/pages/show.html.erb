@@ -1,0 +1,9 @@
+<% content_for :title, @page.title unless @page.slug == "homepage" %>
+
+<% if logged_in? %>
+  <div class="pull-right">
+    <%= link_to "edit", edit_page_path(@page) %>
+  </div>
+<% end %>
+
+<%= @page.content.html_safe %>

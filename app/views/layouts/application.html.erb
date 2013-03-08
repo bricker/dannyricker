@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title) + " | danny ricker" : "danny ricker" %></title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+  <%= favicon_link_tag %>
+  <%= yield :head %>
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+      <%= link_to image_tag('header.jpg', alt: "Danny Ricker"), root_path %>
+    </div>
+
+    <% if logged_in? %>
+      <div class="manage">
+        <%= link_to "pages", pages_path %> -
+        <%= link_to "posts", posts_path %> -
+        <%= link_to "new post", new_post_path %> - 
+        <%= link_to "new page", new_page_path %> - 
+        <%= link_to 'logout', logout_path %>
+      </div>
+    <% end %>
+
+    <div class="content">
+      <div class="flash_messages">
+        <% flash.each do |name, message| %>
+          <div class="<%=name%>"><%= message %></div>
+        <% end %>
+      </div>
+      
+      <%= yield %>
+
+      <br style="clear: both" />
+    </div>
+  </div> <!-- main -->
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=611937288819829";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

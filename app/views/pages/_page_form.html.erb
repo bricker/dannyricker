@@ -1,0 +1,21 @@
+<%= form_for page do |f| %>
+  <h2><%= title %></h2>
+  
+  <ul>
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+    
+    <li>
+      <%= f.label :slug %>
+      <%= f.text_field :slug %>
+    </li>
+
+    <li>
+      <%= f.text_area :content, class: "ckeditor" %>
+    </li>
+  </ul>
+
+  <%= f.submit %>
+<% end %>

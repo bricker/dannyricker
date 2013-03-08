@@ -1,0 +1,11 @@
+<% content_for :title, "Posts" %>
+
+<%= paginate @posts %>
+<hr />
+<%= render @posts %>
+<hr />
+<%= paginate @posts %>
+
+<% if @posts.empty? %>
+  There are no posts.
+<% end %>

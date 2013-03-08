@@ -1,0 +1,21 @@
+.notice, .alert {
+    padding: 5px;
+    margin: 0 0 3px 0;
+    text-align: left;
+}
+
+.notice {
+    background: #A6F766;
+    border: 1px solid #284907;
+    color: #284907;
+}
+
+.alert {
+    background: #FF96A9;
+    border: 1px solid #8A0917;
+    color: #8A0917;
+}
+
+.pull-right {
+    float: right
+}

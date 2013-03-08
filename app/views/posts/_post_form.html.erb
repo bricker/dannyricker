@@ -1,0 +1,16 @@
+<%= form_for post do |f| %>
+  <h2><%= title %></h2>
+
+  <ul>
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+  
+    <li>
+      <%= f.text_area :body, class: "ckeditor" %>
+    </li>
+  </ul>
+  
+  <%= f.submit %>
+<% end %>

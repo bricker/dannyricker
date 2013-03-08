@@ -1,0 +1,12 @@
+<% content_for :title, @post.title %>
+
+<% content_for :head do %>
+  <meta property="og:title" content="<%=@post.title%>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="<%=image_url('danny_avatar.png')%>" />
+  <meta property="og:url" content="<%=post_url(@post)%>" />
+  <meta property="og:site_name" content="DannyRicker.com" />
+  <meta property="fb:admins" content="bricker,dannyricker" />
+<% end %>
+  
+<%= render @post %>

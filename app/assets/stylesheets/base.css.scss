@@ -1,0 +1,35 @@
+.main {
+    width: 750px;
+    margin: 10px auto 20px auto;
+}
+
+.header {
+    margin: 0 0 10px 0;
+    text-align: center;
+    a { display: block; }
+
+    img {
+        border: 1px solid #448844;
+        padding: 2px;
+    }
+}
+
+.manage {
+    font-size: .9em;
+    text-align: right;
+    margin: 0 0 10px 0;
+    color: #ccc;
+
+    a {
+        color: #ddd;
+        &:hover {
+            color: #009900;
+        }
+    }
+}
+
+.content {
+    background: #efefef;
+    padding: 10px;
+}
+

@@ -1,0 +1,24 @@
+<article class="post">
+  <header>
+    <h2><%= link_to post.title, post %></h2>
+    <div class="metadata">
+      <time datetime="<%=post.created_at%>"><%= post.created_at.strftime("%A, %B %e at %l:%M%P") %></time> - <%= link_to 'link', post %>
+      <% if logged_in? %>
+        - [<%= link_to 'edit', edit_post_path(post) %> - <%= link_to 'delete', post_path(post), method: :delete, data: { confirm: 'Delete this post?' } %>]
+      <% end %>
+    </div>
+  </header>
+
+  <%= post.body.html_safe %>
+
+  <footer>
+    <div class="share">
+      <span class="permalink"><%= link_to 'link', post_url(post) %></span>
+
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%=post_url(post)%>" data-text="<%=post.title%> - <%=post_url(post.id)%>" data-related="dannyricker">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+      <div class="fb-like" data-href="<%=post_url(post)%>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+    </div>
+  </footer>
+</article>

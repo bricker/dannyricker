@@ -1,0 +1,30 @@
+.post {
+    margin-bottom: 20px;
+    
+    header {
+        margin-bottom: 10px;
+    }
+}
+
+.metadata {
+    font-family: arial, sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    font-size: .9em;
+    color: #444;
+}
+
+.share {
+    background: #ccc;
+    padding: 10px;
+}
+
+.permalink {
+    display: inline-block;
+    width: 50px;
+    vertical-align: top;
+}
+
+.fb-like {
+    top: -3px; // Fix its weird positioning
+}

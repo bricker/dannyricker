@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
     if Digest::SHA1.hexdigest(params[:username]) == USERNAME && Digest::SHA1.hexdigest(params[:password]) == PASSWORD
       session[:logged_in] = true
       redirect_to session[:return_to] || root_path, notice: 'Logged in.'
+      session[:return_to] = nil
     else
       redirect_to login_path, alert: "Wrong info."
     end
